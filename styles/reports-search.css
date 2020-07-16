@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 body{
-    /* background-image: url(/img/signup.jpg); */
-    /* background-size: cover; */
     display: grid;
     background-color: whitesmoke;
 }
@@ -20,12 +18,10 @@ nav ul {
     list-style:none;
 }
 nav li {
-    /* background-color: white; */
     margin: 1em;
     margin-top: 20px;
     float:right;
-    font-weight: 900;
-    padding: .5em;
+    font-weight: 900px;
     font-size: .8rem;
 }
 nav ul input{
@@ -62,4 +58,26 @@ img{
     border-radius: 50%;
     width:100px;
     height:100px;
+}
+.sticky{
+    position: fixed;
+    margin: 0;
+    width: 100%;
+}
+@media(max-width:768px){
+    nav li{
+        padding:0;
+        margin: .4rem;
+        display: flex;
+    }
+    .add, .logout{
+        width:60px;
+        font-size: 10px;
+    }
+    input{
+        size: 60px;
+        margin-right: 0;
+        width: 100px;
+    }
+   
 }

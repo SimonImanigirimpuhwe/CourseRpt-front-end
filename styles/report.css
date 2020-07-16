@@ -50,6 +50,11 @@ img{
     width:100px;
     height:100px;
 }
+.sticky{
+    position: fixed;
+    margin: 0;
+    width: 100%;
+}
 .container{
     width: 70%;
     margin-left: 15px;
@@ -57,7 +62,7 @@ img{
 
 }
 header{
-    margin-top: 100px;
+    margin-top: 150px;
     align-items: center;
     justify-content: center;
     text-align: center;

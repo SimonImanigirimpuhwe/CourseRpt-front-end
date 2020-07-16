@@ -7,7 +7,6 @@ body{
     background-image: url(/img/signup.jpg);
     background-size: cover;
     display: grid;
-    /* background-color: aquamarine; */
 }
 .top{
     background-color: aquamarine;
@@ -48,8 +47,12 @@ img{
      width:100px;
      height:100px;
 }
+.sticky{
+    position: fixed;
+    margin: 0;
+    width: 100%;
+}
 .container{
-    /* background-color: aquamarine; */
     display: flex;
     justify-content: center;
     height: 100vh;
@@ -57,7 +60,7 @@ img{
 }
 h3{
     text-align: center;
-    line-height: 100px;
+    line-height: 60vh;
     text-transform: uppercase;
     color:#26CC7C;
 }
@@ -67,12 +70,12 @@ form{
     text-align: center;
     justify-content: center;
     border: 20px solid #cde7ff;
-    margin-top: 20vh;
+    margin-top: -100px;
     width:700px ;
     max-width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     padding: 20px;
     height: 100%;
 }
