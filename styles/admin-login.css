@@ -27,17 +27,14 @@ nav li {
     font-weight: 900;
     padding: .5em;
     text-transform: uppercase;
-    color: black;
+    color:#fff ;
     font-size: .8rem;
 }
-nav a:hover,
-nav a:focus {
+nav li:hover,
+nav li:focus {
     background-color: rgb(11, 12, 12);
     cursor:pointer;
     color: darkcyan;
-}
-a{
-    text-decoration: none;
 }
 img{
     margin-left: 10px;
@@ -107,9 +104,29 @@ button:hover{
     cursor: pointer;
     background-color: black;
 }
-a{
-    text-decoration: none;
-    color:#fff ;
+.load-result{
+    color: red;
+    display: flex;
+    padding: 5px;
+    margin-top: 2px;
+    width: 50%;
+    height: 20px;
+}
+.result{
+   border: 3px solid #888888 ;
+   border-top: 3px solid rgba(225, 22, 12); 
+   border-radius: 50%;
+   margin-left:145px;
+   width: 20px;
+   height: 20px;
+   -webkit-animation: spin 3s linear infinite;
+   animation: spin 3s linear infinite;
+}
+.error-display{
+    height: 40px;
+    line-height: 20px;
+    width: 50%;
+    text-align: center;
 }
 @media(max-width:768px){
     body{
@@ -121,5 +138,13 @@ a{
     }
     .top li{
         margin-right: 110px;
+    }
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
     }
 }

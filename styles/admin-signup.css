@@ -128,6 +128,34 @@ small a:hover{
     background-color: darkgray;
     color: black;
 }
+.load-result{
+    color: red;
+    display: flex;
+    padding: 5px;
+    margin-top: 2px;
+    width: 50%;
+    height: 20px;
+}
+.result{
+   border: 3px solid rgba(red, green, blue, alpha); 
+   border-radius: 50%;
+   width: 20px;
+   animation: spin 2s linear infinite; 
+}
+.error-display{
+    height: 40px;
+    line-height: 20px;
+    width: 50%;
+    text-align: center;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 @media(max-width:768px){
     body{
         grid-template-rows: 1fr;

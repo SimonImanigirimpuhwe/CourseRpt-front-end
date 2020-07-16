@@ -16,3 +16,11 @@ function handleResponse(response){
         throw new Error(`Content-type ${contentType} not supported`)
     }
 }
+
+//clear token when admin logged out
+const logoutBtn = document.querySelector('.logout');
+
+logoutBtn.addEventListener('click', () =>{
+    localStorage.removeItem('loginToken');
+    location.href ='./admin-login.html';
+})
