@@ -1,6 +1,9 @@
 
 const btn = document.querySelector('.btn');
+const result = document.querySelector('.result');
+const logoutBnt = document.querySelector('.logout');
 
+const savedToken = JSON.parse(localStorage.getItem('UserToken'));
 
 const data = [];
 
@@ -32,16 +35,26 @@ btn.addEventListener('click', () =>{
     }
     data.push(dayReport);
     localStorage.setItem('Report', JSON.stringify(data));
-
+    
     fetch('http://localhost:3000/api/v1/report',{
     method:'post',
     headers:{
-        'content-type':'application/json'
+        'content-type':'application/json',
+        'auth-token':savedToken
     },
     body:JSON.stringify(dayReport)
 })
 .then(handleResponse)
-.then(data => console.log('success: ', data))
+.then(data => {
+    if(!savedToken){
+        result.innerHTML = 'Access denied';
+       return false;
+    }else{
+        result.innerHTML = data.msg;
+        console.log(savedToken)
+        console.log('success: ', data)
+    }
+})
 .catch(error => console.log(error))
 })
 
@@ -63,3 +76,8 @@ function handleResponse(response){
     }
 }
 
+logoutBnt.addEventListener('click', (e) =>{
+    e.preventDefault();
+    localStorage.removeItem('UserToken')
+    location.href = './users-login.html'
+})

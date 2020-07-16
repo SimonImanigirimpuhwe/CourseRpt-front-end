@@ -122,3 +122,36 @@ a{
         margin-right: 110px;
     }
 }
+
+.load-result{
+    color: red;
+    display: flex;
+    padding: 5px;
+    margin-top: 2px;
+    width: 50%;
+    height: 20px;
+}
+.result{
+   border: 3px solid #888888 ;
+   border-top: 3px solid rgba(225, 22, 12); 
+   border-radius: 50%;
+   margin-left:145px;
+   width: 20px;
+   height: 20px;
+   -webkit-animation: spin 3s linear infinite;
+   animation: spin 3s linear infinite;
+}
+.error-display{
+    height: 40px;
+    line-height: 20px;
+    width: 50%;
+    text-align: center;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
