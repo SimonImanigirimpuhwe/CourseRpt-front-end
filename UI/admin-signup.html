@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/admin-signup.css">
+    <title>Admin signup</title>
+</head>
+
+<body>
+    <div class="top">
+        <img src="/img/ur-logo.png" alt="logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="/UI/index.html">Back</a></li>
+            </ul>
+        </nav>
+    </div>
+    <h3>Admin signup form</h3>
+    <div class="container">
+        <form action="" method="post">
+            <label for="firstName">Firstname</label>
+            <input type="text" name="firstName" id="firstName" placeholder="Enter Your Firstname" value="">
+            <label for="lastName">Lastname</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Enter Your Lastname" value="">
+            <label for="regNumber">Username</label>
+            <input type="text" name="username" id="username" placeholder="Enter Your Username" value="">
+            <label for="school">Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter Your Email" value="">
+            <label for="faculty">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter Your Password" value="">
+            <button class="register">Register</button>
+            <small>Already have an account?<a href="/UI/admin-login.html">Login</a> </small>
+        </form>
+    </div>
+    <script src="/js/admin-signup.js"></script>
+</body>
+
+</html>

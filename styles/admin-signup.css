@@ -1,0 +1,139 @@
+*,*::before,*::after{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(/img/signup.jpg);
+    background-size: cover;
+    display: grid;
+    background-color: aquamarine;
+}
+.top{
+    background-color: aquamarine;
+    border-bottom: 3px solid pink;
+    box-shadow: 5px 5px 10px #888888;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+}
+nav li {
+    background-color: #141c2c;
+    border-radius: 10px;
+    margin: 1em;
+    margin-top: 20px;
+    float:right;
+    font-weight: 900;
+    padding: .5em;
+    text-transform: uppercase;
+    color: black;
+    font-size: .8rem;
+}
+nav a:hover,
+nav a:focus {
+    background-color: rgb(11, 12, 12);
+    cursor:pointer;
+    color: darkcyan;
+}
+a{
+text-decoration: none;
+color:#fff ;
+}
+img{
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size:20px;
+    float:left;
+    border-radius: 50%;
+    width:100px;
+    height:100px;
+}
+h3{
+    text-align: center;
+    line-height: 100px;
+    text-transform: uppercase;
+    color:#26CC7C;
+}
+.container{
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+form{
+    /* background-color: white; */
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border: 20px solid #cde7ff;
+    margin-top: 20vh;
+    width:700px ;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 20px;
+    height: 100%;
+}
+label{
+    display:inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+input{
+    background-color: transparent;
+    border: 3px solid #26CC7C;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: 20px;
+    padding: 10px;
+    width: 40%;
+}
+
+.register{
+ padding: 5px;
+ margin-top: 40px;
+ border: none;
+ background-color: #141c2c;
+ color: #fff;
+ width: 25%;
+ border-radius: 5px;
+}
+.register:hover{
+    background-color: black;
+    color: gray;
+    cursor: pointer;
+}
+small{
+    padding: 15px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+small a{
+    border: none;
+    background-color: #141c2c;
+    color: #fff;
+    border-radius: 5px;
+    padding-left: 5px; 
+}
+small a:hover{
+    cursor: pointer;
+    background-color: darkgray;
+    color: black;
+}
+@media(max-width:768px){
+    body{
+        grid-template-rows: 1fr;
+        overflow-x: hidden;
+    }
+    form{
+        margin-left: -200px;
+    }
+    .top li{
+        margin-right: 110px;
+    }
+}
