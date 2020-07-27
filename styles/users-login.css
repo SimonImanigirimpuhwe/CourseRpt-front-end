@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url(/img/signup.jpg);
+    background-image: url(../img/signup.jpg);
     background-size: cover;
     display: grid;
 }
@@ -104,20 +104,6 @@ button:hover{
     cursor: pointer;
     background-color: black;
 }
-
-@media(max-width:768px){
-    body{
-        grid-template-rows: 1fr;
-        overflow-x: hidden;
-    }
-    form{
-        margin-left: -200px;
-    }
-    .top li{
-        margin-right: 110px;
-    }
-}
-
 .load-result{
     color: red;
     display: flex;
@@ -148,5 +134,26 @@ button:hover{
     }
     100%{
         transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@media(max-width:768px){
+    body{
+        grid-template-rows: 1fr;
+        overflow-x: hidden;
+    }
+    form{
+        margin-left: -200px;
+    }
+    .top li{
+        margin-right: 110px;
     }
 }
