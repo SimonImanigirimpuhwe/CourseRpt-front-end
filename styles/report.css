@@ -79,7 +79,6 @@ table{
     background-color: whitesmoke;
     margin-top: 100px;
     width: 50%;
-
 }
 thead{
     font-size: 20px;
@@ -120,7 +119,7 @@ input{
 }
 .result{
     color: red;
-    width: 30%;
+    width: 40%;
     line-height: 20px;
     font-size: 40px;
     font-weight: 15px;
@@ -130,4 +129,31 @@ input{
     margin-left: 40%;
     margin-top: 10px;
     padding-top: 70px;
+}
+.load-holder{
+    display: flex;
+    padding: 10px;
+    margin-top: 10px;
+    width: 10%;
+    height: 20px;
+    margin-left: 50%;
+    height: 100px;
+}
+.load-result{
+   border: 10px solid #888888 ;
+   border-top: 15px solid rgba(225, 22, 12); 
+   border-radius: 50%;
+   width: 100px;
+   height: 100px;
+   -webkit-animation: spin 3s linear infinite;
+   animation: spin 3s linear infinite;
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }

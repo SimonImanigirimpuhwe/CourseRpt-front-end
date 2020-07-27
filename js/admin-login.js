@@ -4,11 +4,11 @@ const loadData = document.querySelector('.load-result');
 const errorResult = document.querySelector('.error-display');
 const button = document.querySelector('.register');
 
-
+//https://t-progress-report.herokuapp.com
 const postData = (data) =>{
     loadData.innerHTML = `<div class="result"></div>`
   
-    fetch('http://localhost:3000/api/v1/admins/login', {
+    fetch('https://t-progress-report.herokuapp.com/api/admins/login', {
         method:'post',
         headers:{
             'content-type':'application/json'
@@ -57,19 +57,24 @@ function handleData(result){
 }
 
 
-const inputValidation = (username, password, obj)=>{
-    if(username.length =''){
+const inputValidation = (username, password, inputOptions)=>{
+    if(username.length === 0){
         errorResult.style.color='red';
-        errorResult.innerHTML = `Please enter a valid regNumber`;
+        errorResult.innerHTML = `Please Username is required`;
         return false;
     }
-    if(password.length < 6){
+    if(password.length === 0){
         errorResult.style.color='red';
-        errorResult.innerHTML = `Password must be at least 6 characters long`;
+        errorResult.innerHTML = `Please Password is required`;
+        return false;
+    }
+    if(password.length < 8){
+        errorResult.style.color='red';
+        errorResult.innerHTML = `Password must be at least 8 characters long`;
         return false;
     }
     else{
-        postData(obj)
+        postData(inputOptions)
     }
 }
 
@@ -94,5 +99,10 @@ button.addEventListener('click', (e)=>{
 const backIncon = document.querySelector('.back');
 backIncon.addEventListener('click', (e) =>{
     e.preventDefault()
-    location.href = './admin-signup.html'
+    loadData.innerHTML = `<div class="result"></div>`
+    setTimeout(() =>{
+        loadData.innerHTML ='';
+        location.href = './admin-signup.html'
+    }, 5000);
+    
 })

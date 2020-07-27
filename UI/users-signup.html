@@ -13,13 +13,23 @@
         <img src="/img/ur-logo.png" alt="logo" class="logo">
         <nav>
             <ul>
-                <li class="back">Back</li>
+                <li class="search">
+                    <input type="search" name="search" id="search" placeholder="search users">
+                </li>
+                <li>
+                    <button class="view-cps" onclick="displayReport()">All cps</button></li>
+                <li>
+                <li>
+                    <button class="add">Add cps</button></li>
+                <li>
+                    <button class="back">Back</button>
+                </li>
             </ul>
         </nav>
     </div>
-    <h3>Class Representative Signup form</h3>
+    <h3 id="title">Class Representative Signup form</h3>
     <div class="container">
-        <form action="" method="post">
+        <form action="" method="post" autocomplete="off">
             <label for="firstName">Firstname</label>
             <input type="text" name="firstName" id="firstname" placeholder="Enter Your Firstname" value="">
             <label for="lastName">Lastname</label>
@@ -37,6 +47,13 @@
             <div class="error-display"></div>
         </form>
     </div>
+    <div class="all-users">
+        <div class="search-users"></div>
+    </div>
+    <div class="users-error"></div>
+    <small>
+
+    </small>
     <script src="/js/users-signup.js"></script>
 </body>
 

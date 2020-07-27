@@ -1,13 +1,13 @@
 const loadData = document.querySelector('.load-result');
 const errorResult = document.querySelector('.error-display');
 const button = document.querySelector('.register')
-
+const nameInput = document.querySelector('#firstName');
 
 
 const postData = (info) =>{
-    loadData.innerHTML = `<div class="result"></div>`
+    loadData.innerHTML = `<div class="result"></div>`;
   
-    fetch('http://localhost:3000/api/v1/admins/signup', {
+    fetch('https://t-progress-report.herokuapp.com/api/admins/signup', {
         method:'post',
         headers:{
             'content-type':'application/json'
@@ -16,8 +16,7 @@ const postData = (info) =>{
     })
     .then(handleResponse)
     .then(handleData)
-    .catch(err =>{
-        console.log(err)
+    .catch(() =>{
         loadData.innerHTML ='';
         errorResult.style.color = 'red';
         errorResult.innerHTML = 'Something went wrong, try again!'
@@ -48,38 +47,68 @@ function handleData(result){
         setTimeout(() =>{
             localStorage.setItem('adminToken', JSON.stringify(result.token));
             location.href ='./admin-login.html'
-        }, 5000)
-        
-       
-        console.log('sucess:', result)  
+        }, 5000); 
     }
 }
 
 
 const inputValidation = (firstname, lastname, username, email, password, options)=>{
+    const emailPattern = /^[^0-9A-Z]/;
+    const namePattern = /^[^0-9]/;
+   
     if(firstname.length === 0){
         errorResult.style.color='red';
-        errorResult.innerHTML = `Please Firstname is required`;
+        errorResult.innerHTML = 'Please Firstname is required';
+        return false;
+    }
+    if(!firstname.match(namePattern)){
+        errorResult.style.color = 'red';
+        errorResult.innerHTML = 'Firstname shouldn\'t be started with a number';
         return false;
     }
     if(lastname.length === 0){
         errorResult.style.color='red';
-        errorResult.innerHTML = `Please lastname is required`;
+        errorResult.innerHTML = 'Please lastname is required';
+        return false;
+    }
+    if(!lastname.match(namePattern)){
+        errorResult.style.color = 'red';
+        errorResult.innerHTML = 'Lastname shouldn\'t be started with a number';
         return false;
     }
     if(username.length === 0){
         errorResult.style.color='red';
-        errorResult.innerHTML = `Please username is required`;
+        errorResult.innerHTML = 'Please username is required';
+        return false;
+    }
+    if(!username.match(namePattern)){
+        errorResult.style.color = 'red';
+        errorResult.innerHTML = 'Username shouldn\'t be started with a number';
+        return false;
+    }
+    if(username.length < 5){
+        errorResult.style.color = 'red';
+        errorResult.innerHTML = 'Username must be at least 5 characters long';
         return false;
     }
     if(email.length === 0){
         errorResult.style.color='red';
-        errorResult.innerHTML = `Please Email must be valid`;
+        errorResult.innerHTML = 'Please Email must be valid';
         return false;
     }
-    if(password.length < 6){
+    if(!email.match(emailPattern)){
+        errorResult.style.color = 'red';
+        errorResult.innerHTML = 'Email shoudn\'t be started either with a number or capital letter';
+        return false;
+    }
+    if(password.length === 0){
         errorResult.style.color='red';
-        errorResult.innerHTML = `Password must be 6 characters long`;
+        errorResult.innerHTML = 'Please Password is required';
+        return false;
+    }
+    if(password.length < 8){
+        errorResult.style.color='red';
+        errorResult.innerHTML = 'Password must be 8 characters long';
         return false;
     }
     else{
@@ -112,3 +141,15 @@ button.addEventListener('click',(e)=>{
         adminData
     )
 });
+
+//Return to home page
+const returnBtn = document.querySelector('.back');
+
+returnBtn.addEventListener('click', (e) =>{
+    e.preventDefault();
+    loadData.innerHTML = `<div class="result"></div>`
+    setTimeout(() =>{
+        loadData.innerHTML = '';
+        location.href = './index.html';
+    }, 5000);
+})

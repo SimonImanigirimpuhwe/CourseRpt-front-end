@@ -2,12 +2,13 @@ const btn = document.querySelector('button');
 const loadData = document.querySelector('.load-result');
 const errorResult = document.querySelector('.error-display');
 
+const url = 'https://t-progress-report.herokuapp.com';
 
 const postData = (data) =>{
     loadData.innerHTML = `<div class="result"></div>`
   
-    fetch('http://localhost:3000/api/v1/users/login', {
-        method:'post',
+    fetch(`${url}/api/users/login`, {
+        method:'POST',
         headers:{
             'content-type':'application/json'
         },
@@ -48,17 +49,25 @@ function handleData(result){
             localStorage.setItem('UserToken', JSON.stringify(result.token));
             location.href ='./report.html'
         }, 5000)
-        
-       
-        console.log('sucess:', result)  
     }
 }
 
 
-const inputValidation = (reg,obj)=>{
+const inputValidation = (reg, obj)=>{
+    const regPattern = /[^a-zA-Z]/;
+    if(reg.length === 0){
+        errorResult.style.color = 'red';
+        errorResult.innerHTML = 'RegNumber is required';
+        return false
+    }
+    if(!reg.match(regPattern)){
+        errorResult.style.color = 'red';
+        errorResult.innerHTML = 'RegNumber must be numbers';
+        return false;
+    }
     if(reg.length != 9){
         errorResult.style.color='red';
-        errorResult.innerHTML = `Please enter a valid regNumber`;
+        errorResult.innerHTML = 'RegNumber must be 9 characters long';
         return false;
     }else{
         postData(obj)
@@ -77,6 +86,17 @@ btn.addEventListener('click', (e)=>{
         regNumber,
         loginData
     )
-    // data.push(loginData);
-    // localStorage.setItem('users', JSON.stringify(data))
 });
+
+//allow user go back to home page
+
+const logoutBtn = document.querySelector('.logout');
+
+logoutBtn.addEventListener('click', (e) =>{
+    e.preventDefault();
+    loadData.innerHTML = `<div class="result"></div>`
+    setTimeout(() =>{
+        loadData.innerHTML ='';
+        location.href ='./index.html';
+    }, 5000);
+})

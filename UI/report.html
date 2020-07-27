@@ -23,12 +23,15 @@
         <h1>UR-CMHS</h1>
         <h2>Center for teaching and learning enhancement</h2>
         <h2>Academic year:<span class="year">2020-2021</span></h2>
-        <h2>School:<span class="school"><input type="text" name="school" id="school-input" value=""></span></h2>
-        <h3>Faculty:<span class="faculty"><input type="text" name="faculty" id="faculty-input" value=""></span></h3>
-        <h3>Class:<span class="level"><input type="text" name="level" id="level-input" value=""></span></h3>
+        <h2>School:<span class="school"><input type="text" name="school" id="school-input" value=""
+                    autocomplete="off"></span></h2>
+        <h3>Faculty:<span class="faculty"><input type="text" name="faculty" id="faculty-input" value=""
+                    autocomplete="off"></span></h3>
+        <h3>Class:<span class="level"><input type="text" name="level" id="level-input" value=""
+                    autocomplete="off"></span></h3>
         <h3>Numbers of students:<span class="num-student"><input type="text" name="students" id="students-input"
-                    value=""></span></h3>
-        <h2>Weekly teaching progress report on <span class="report">19th-24th week I</span></h2>
+                    value="" autocomplete="off"></span></h3>
+        <h2>Weekly teaching progress report on <span class="report"></span></h2>
     </header>
     <div class="container">
         <table>
@@ -46,58 +49,20 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="days"><input type="text" name="days" id="time" placeholder="Monday" value=""></td>
-                    <td><input type="datetime-local" name="date" id="date" value=""></td>
-                    <td><input type=" number" name="hours" id="hours" value=""></td>
-                    <td><input type="text" name="module-title" id="module-title" value=""></td>
-                    <td><input type="text" name="component" id="component" value=""></td>
-                    <td><input type="text" name="activity" id="activity" value=""></td>
-                    <td><input type="text" name="lecturer" id="lecturer" value=""></td>
-                    <td><input type="text" name="observation" id="observation" value=""></td>
-                </tr>
-                <tr>
-                    <td class="days"><input type="text" name="days" id="time" placeholder="Tuesday" value=""></td>
-                    <td><input type="datetime-local" name="date" id="date" value=""></td>
-                    <td><input type="number" name="hours" id="hours" value=""></td>
-                    <td><input type="text" name="module-title" id="module-title" value=""></td>
-                    <td><input type="text" name="component" id="component" value=""></td>
-                    <td><input type="text" name="activity" id="activity" value=""></td>
-                    <td><input type="text" name="lecturer" id="lecturer" value=""></td>
-                    <td><input type="text" name="observation" id="observation" value=""></td>
-                </tr>
-                <tr>
-                    <td class="days"><input type="text" name="days" id="time" placeholder="Wednesday" value=""></td>
-                    <td><input type="datetime-local" name="date" id="date" value=""></td>
-                    <td><input type="number" name="hours" id="hours" value=""></td>
-                    <td><input type="text" name="module-title" id="module-title" value=""></td>
-                    <td><input type="text" name="component" id="component" value=""></td>
-                    <td><input type="text" name="activity" id="activity" value=""></td>
-                    <td><input type="text" name="lecturer" id="lecturer" value=""></td>
-                    <td><input type="text" name="observation" id="observation" value=""></td>
-                </tr>
-                <tr>
-                    <td class="days"><input type="text" name="days" id="time" placeholder="Thursday" value=""></td>
-                    <td><input type="datetime-local" name="date" id="date" value=""></td>
-                    <td><input type="number" name="hours" id="hours" value=""></td>
-                    <td><input type="text" name="module-title" id="module-title" value=""></td>
-                    <td><input type="text" name="component" id="component" value=""></td>
-                    <td><input type="text" name="activity" id="activity" value=""></td>
-                    <td><input type="text" name="lecturer" id="lecturer" value=""></td>
-                    <td><input type="text" name="observation" id="observation" value=""></td>
-                </tr>
-                <tr>
-                    <td class="days"><input type="text" name="days" id="time" placeholder="Friday" value=""></td>
-                    <td><input type="datetime-local" name="date" id="date" value=""></td>
-                    <td><input type="number" name="hours" id="hours" value=""></td>
-                    <td><input type="text" name="module-title" id="module-title" value=""></td>
-                    <td><input type="text" name="component" id="component" value=""></td>
-                    <td><input type="text" name="activity" id="activity" value=""></td>
-                    <td><input type="text" name="lecturer" id="lecturer" value=""></td>
-                    <td><input type="text" name="observation" id="observation" value=""></td>
+                    <td class="days"><input type="text" name="days" id="time" placeholder="Monday" value=""
+                            autocomplete="off"></td>
+                    <td><input type="date" name="date" id="date" value="" autocomplete="off"></td>
+                    <td><input type=" number" name="hours" id="hours" value="" autocomplete="off"></td>
+                    <td><input type="text" name="module-title" id="module-title" value="" autocomplete="off"></td>
+                    <td><input type="text" name="component" id="component" value="" autocomplete="off"></td>
+                    <td><input type="text" name="activity" id="activity" value="" autocomplete="off"></td>
+                    <td><input type="text" name="lecturer" id="lecturer" value="" autocomplete="off"></td>
+                    <td><input type="text" name="observation" id="observation" value="" autocomplete="off"></td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <div class="load-holder"></div>
     <div class="result"></div>
     <button class="btn btn-primary"><i class="fa fa-btn"></i>Submit</button>
 

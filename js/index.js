@@ -1,7 +1,8 @@
 const btn = document.querySelector('.btn');
 const body = document.querySelector('body');
 
-btn.addEventListener('click',()=>{
+btn.addEventListener('click',(e)=>{
+    e.preventDefault();
     const guidline = document.querySelector('.guidline');
     guidline.classList.toggle('visible')
     if(guidline.classList.contains('visible')){
