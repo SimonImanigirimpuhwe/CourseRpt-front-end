@@ -18,16 +18,6 @@ addBtn.addEventListener('click', (e) =>{
     errorResult.style.visibility = 'hidden';
 })
 
-//Clear inputs
-function inputEmpty(){
-    document.querySelector('#firstname') = '';
-    document.querySelector('#lastname')= '';
-    document.querySelector('#regnumber') = '';
-    document.querySelector('#school') = '';
-    document.querySelector('#faculty')= '';
-    document.querySelector('#level')= ''; 
-
-}
 
 const submitData = (info) =>{
     loadData.innerHTML = `<div class="result"></div>`
@@ -64,17 +54,11 @@ function handleData(result){
     if(result.error){
         loadData.innerHTML = '';
         error.style.color ='red';
-        error.innerHTML = `${result.error}`;
-        inputEmpty();
-              
+        error.innerHTML = `${result.error}`;        
     }else{
         loadData.innerHTML ='';
         error.style.color ='black';
         error.innerHTML =`${result.msg}`;
-        inputEmpty();
-        // setTimeout(() =>{
-        //     location.href ='./admin-login.html'
-        // }, 5000) 
     }
 }
 
