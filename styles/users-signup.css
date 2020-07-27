@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url(/img/signup.jpg);
+    background-image: url(../img/signup.jpg);
     background-size: cover;
     display: grid;
 }
@@ -142,7 +142,8 @@ input{
    border: 3px solid rgba(red, green, blue, alpha); 
    border-radius: 50%;
    width: 20px;
-   animation: spin 2s linear infinite; 
+   -webkit-animation: spin 3s linear infinite;
+   animation: spin 3s linear infinite; 
 }
 .error-display{
     height: 40px;
@@ -218,17 +219,12 @@ span{
     background-color: #26CC7C;
     cursor: pointer;
 }
-/* .search-users{ .container-users
-    background-color: red; 
-    width: 350px;
-    height: 300px;
-}  */
+
 small{
-    /* visibility: hidden; */
+    
     margin-top: 20px;
 }
 #input-edit{
-    /* background-color: black; */
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -238,7 +234,6 @@ small{
     display: flex;
     flex-direction: column;
     margin-left: 30%;
-    /* padding: 20px; */
     height: 100%;
     margin-top: -600px;
     
@@ -284,10 +279,17 @@ small{
         transform: rotate(360deg);
     }
 }
+@-webkit-keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 @media(max-width:768px){
     body{
         grid-template-rows: 1fr;
-        /* overflow-x: hidden; */
     }
     form{
         margin-left: -200px;
