@@ -20,7 +20,7 @@ const postData = (data) =>{
     .catch(err =>{
         console.log(err)
         loadData.innerHTML ='';
-        errorResult.style.color = 'red';
+        errorResult.style.color = '#a90505';
         errorResult.innerHTML = 'Something went wrong, try again!'
     })
 }
@@ -39,37 +39,34 @@ function handleResponse(response){
 function handleData(result){
     if(result.error){
         loadData.innerHTML = '';
-        errorResult.style.color ='red';
+        errorResult.style.color ='#a90505';
         errorResult.innerHTML = `${result.error}`;
               
     }else{
         loadData.innerHTML ='';
-        errorResult.style.color ='black';
+        errorResult.style.color ='#010611';
         errorResult.innerHTML =`${result.msg}`;
         setTimeout(() =>{
             localStorage.setItem('loginToken', JSON.stringify(result.token));
             location.href ='./reports-search.html'
         }, 5000)
-        
-       
-        console.log('sucess:', result)  
     }
 }
 
 
 const inputValidation = (username, password, inputOptions)=>{
     if(username.length === 0){
-        errorResult.style.color='red';
+        errorResult.style.color='#a90505';
         errorResult.innerHTML = `Please Username is required`;
         return false;
     }
     if(password.length === 0){
-        errorResult.style.color='red';
+        errorResult.style.color='#a90505';
         errorResult.innerHTML = `Please Password is required`;
         return false;
     }
     if(password.length < 8){
-        errorResult.style.color='red';
+        errorResult.style.color='#a90505';
         errorResult.innerHTML = `Password must be at least 8 characters long`;
         return false;
     }

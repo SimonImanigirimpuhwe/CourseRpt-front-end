@@ -10,8 +10,8 @@ body{
     background-color: aquamarine;
 }
 .top{
-    background-color: aquamarine;
-    border-bottom: 3px solid pink;
+    background-color: #27dec0;
+    border-bottom: 3px solid #3e5175;
     box-shadow: 5px 5px 10px #888888;
 }
 nav ul {
@@ -55,7 +55,7 @@ h3{
     text-align: center;
     line-height: 500px;
     text-transform: uppercase;
-    color:#26CC7C;
+    color:blue;
 }
 .container{
     display: flex;
@@ -65,10 +65,11 @@ h3{
 }
 
 form{
+    background-color: #27dec0;
     align-items: center;
     text-align: center;
     justify-content: center;
-    border: 20px solid #cde7ff;
+    border: 20px solid #36474e;
     margin-top: -200px;
     width:700px ;
     max-width: 100%;
@@ -84,8 +85,8 @@ label{
     margin-bottom: 5px;
 }
 input{
-    background-color: transparent;
-    border: 3px solid #26CC7C;
+    background-color: whitesmoke;
+    border: 3px solid #3e5175;
     border-radius: 3px;
     font-size: 15px;
     font-weight: 20px;
@@ -170,7 +171,7 @@ small a:hover{
         overflow-x: hidden;
     }
     form{
-        margin-left: -200px;
+        margin-left: -130px;
     }
     .top li{
         margin-right: 110px;

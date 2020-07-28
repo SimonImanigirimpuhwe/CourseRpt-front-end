@@ -28,16 +28,18 @@ const postForm = (inputValue) =>{
 .then(data => {
     if(!savedToken){
         loadResult.innerHTML ='';
+        result.style.color = '#a90505';
         result.innerHTML = 'Access denied';
        return false;
     }
     if(data.error){
         loadResult.innerHTML = '';
+        result.style.color = '#a90505';
         result.innerHTML = `${data.error}`;
         return false;
     }else{
         loadResult.innerHTML = '';
-        result.style.color ='black'
+        result.style.color ='#010611'
         result.innerHTML = data.msg;
     }
 })
@@ -51,117 +53,117 @@ const formValidation = (school, faculty, level,numStundets, date, day, hrs, modu
     const namePattern = /[^0-9]/;
     const timeFormat = /[^a-zA-Z]/;
     if(school.length === 0){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Please school is required!';
         return false;
     }
     if(!namePattern.test(school)){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'School shoudn\'t be a number';
         return false;
     }
     if(faculty.length === 0){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Please faculty is required!';
         return false;
     }
     if(!faculty.match(namePattern)){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Faculty shoudn\'t be a number';
         return false;
     }
     if(level.length === 0){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Please class level is required!';
         return false;
     }
     if(!level.match(timeFormat)){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Class level must be a number';
         return false;
     }
     if(numStundets.length === 0){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Please Number of students is required!';
         return false;
     }
     if(!numStundets.match(timeFormat)){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Number of students must be a number';
         return false;
     }
     if(date.length === 0){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Please Day is required!';
         return false;
     }
     if(!date.match(namePattern)){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Days shoudn\'t be a number';
         return false;
     }
     if(day.length === 0){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Please Date is required!';
         return false;
     }
     if(hrs.length === 0){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Please Hours are required!';
         return false;
     }
     if(!hrs.match(timeFormat)){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Hours must be a number';
         return false;
     }
     if(module.length === 0){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Please Module is required!';
         return false;
     }
     if(!module.match(namePattern)){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Module shoudn\'t be a number';
         return false;
     }
     if(component.length === 0){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Please Component is required!';
         return false;
     }
     if(!component.match(namePattern)){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Component shoudn\'t be a number';
         return false;
     }
     if(activity.length === 0){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Please Activity is required!';
         return false;
     }
     if(!activity.match(namePattern)){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Activity shouldn\'t be a number';
         return false;
     }
     if(lecturerName.length === 0){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Please name of lecturer is required!';
         return false;
     }
     if(!lecturerName.match(namePattern)){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Name of lecturer shoudn\t be a number';
         return false;
     }
     if(observation.length === 0){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Please Observation is required!';
         return false;
     }
     if(!observation.match(namePattern)){
-        result.style.color = 'red';
+        result.style.color = '#a90505';
         result.innerHTML = 'Observation shouldn\'t be a number';
         return false;
     } else{

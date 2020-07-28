@@ -19,7 +19,7 @@ const postData = (data) =>{
     .catch(err =>{
         console.log(err)
         loadData.innerHTML ='';
-        errorResult.style.color = 'red';
+        errorResult.style.color = '#a90505';
         errorResult.innerHTML = 'Something went wrong, try again!'
     })
 }
@@ -38,12 +38,12 @@ function handleResponse(response){
 function handleData(result){
     if(result.error){
         loadData.innerHTML = '';
-        errorResult.style.color ='red';
+        errorResult.style.color ='#a90505';
         errorResult.innerHTML = `${result.error}`;
               
     }else{
         loadData.innerHTML ='';
-        errorResult.style.color ='black';
+        errorResult.style.color ='#010611';
         errorResult.innerHTML =`${result.msg}`;
         setTimeout(() =>{
             localStorage.setItem('UserToken', JSON.stringify(result.token));
@@ -56,17 +56,17 @@ function handleData(result){
 const inputValidation = (reg, obj)=>{
     const regPattern = /[^a-zA-Z]/;
     if(reg.length === 0){
-        errorResult.style.color = 'red';
+        errorResult.style.color = '#a90505';
         errorResult.innerHTML = 'RegNumber is required';
         return false
     }
     if(!reg.match(regPattern)){
-        errorResult.style.color = 'red';
+        errorResult.style.color = '#a90505';
         errorResult.innerHTML = 'RegNumber must be numbers';
         return false;
     }
     if(reg.length != 9){
-        errorResult.style.color='red';
+        errorResult.style.color='#a90505';
         errorResult.innerHTML = 'RegNumber must be 9 characters long';
         return false;
     }else{

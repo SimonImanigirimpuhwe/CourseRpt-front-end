@@ -8,8 +8,8 @@ body{
     background-color: whitesmoke;
 }
 .top{
-    background-color: aquamarine;
-    border-bottom: 3px solid pink;
+    background-color: #27dec0;
+    border-bottom: 3px solid #3e5175;
     box-shadow: 5px 5px 10px #888888;
 }
 nav ul {

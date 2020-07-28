@@ -34,7 +34,7 @@ const submitData = (info) =>{
     .then(handleData)
     .catch(() =>{
         loadData.innerHTML ='';
-        error.style.color = 'red';
+        error.style.color = '#a90505';
         error.innerHTML = 'Something went wrong, try again!'
     })
 }
@@ -53,11 +53,11 @@ function handleResponse(response){
 function handleData(result){
     if(result.error){
         loadData.innerHTML = '';
-        error.style.color ='red';
+        error.style.color ='#a90505';
         error.innerHTML = `${result.error}`;        
     }else{
         loadData.innerHTML ='';
-        error.style.color ='black';
+        error.style.color ='#010611';
         error.innerHTML =`${result.msg}`;
     }
 }
@@ -68,67 +68,67 @@ const inputValidation = (firstname, lastname, regNumber, school,faculty, level, 
     const regPattern = /[^a-zA-Z]/;
 
     if(firstname.length === 0){
-        error.style.color='red';
+        error.style.color='#a90505';
         error.innerHTML = `Please Firstname is required`;
         return false;
     }
     if(!firstname.match(namePattern)){
-        error.style.color = 'red';
+        error.style.color = '#a90505';
         error.innerHTML = 'Name shoudn\'t be started with a number';
         return false;
     }
     if(lastname.length === 0){
-        error.style.color='red';
+        error.style.color='#a90505';
         error.innerHTML = `Please lastname is required`;
         return false;
     }
     if(!lastname.match(namePattern)){
-        error.style.color = 'red';
+        error.style.color = '#a90505';
         error.innerHTML = 'Name shoudn\'t be started with a number';
         return false;
     }
     if(regNumber.length === 0){
-        error.style.color = 'red';
+        error.style.color = '#a90505';
         error.innerHTML = 'RegNumber is required';
         return false;
     }
     if(!regNumber.match(regPattern)){
-        error.style.color = 'red';
+        error.style.color = '#a90505';
         error.innerHTML = 'RegNumber must be numbers';
         return false;
     }
     if(regNumber.length != 9){
-        error.style.color='red';
+        error.style.color='#a90505';
         error.innerHTML = `RegNumber must be 9 characters long`;
         return false;
     }
     if(school.length === 0){
-        error.style.color='red';
+        error.style.color='#a90505';
         error.innerHTML = `School is required`;
         return false;
     }
     if(!school.match(namePattern)){
-        error.style.color = 'red';
+        error.style.color = '#a90505';
         error.innerHTML = 'School shoudn\'t be started with a number';
         return false;
     }
     if(faculty.length === 0){
-        error.style.color='red';
+        error.style.color='#a90505';
         error.innerHTML = `Faculty is required`;
         return false;
     }
     if(!faculty.match(namePattern)){
-        error.style.color = 'red';
+        error.style.color = '#a90505';
         error.innerHTML = 'Faculty shoudn\'t be started with a number';
         return false;
     }
     if(level.length === 0){
-        error.style.color='red';
+        error.style.color='#a90505';
         error.innerHTML = `Level is required`;
         return false;
     }
     if(!level.match(regPattern)){
-        error.style.color = 'red';
+        error.style.color = '#a90505';
         error.innerHTML = 'Level must be a number';
         return false;
     }
@@ -205,7 +205,7 @@ function displayReport(){
     .then(handleResponse)
     .then(validateData)
     .catch(error =>{
-        errorResult.style.color = 'red';
+        errorResult.style.color = '#a90505';
         errorResult.innerHTML = 'Something went wrong, try again!'
     });
 }
@@ -227,12 +227,12 @@ function displayReport(){
 //function to check data validity
 function validateData(data){
         if(!adminToken){
-            errorResult.style.color = 'red';
+            errorResult.style.color = '#a90505';
             errorResult.innerHTML = 'Access Denied';
             return false;
         }
         if(data.error){
-            errorResult.style.color = 'red';
+            errorResult.style.color = '#a90505';
             errorResult.innerHTML = data.error;
             return false;
         }else{
@@ -323,16 +323,16 @@ function validateData(data){
     //function for cheching data validity
     function handleData(data){
         if(!adminToken){
-            editError.style.color = 'red';
+            editError.style.color = '#a90505';
             editError.innerHTML = 'Access denied';
             return false;
         }
         if(data.error){
-            editError.style.color = 'red';
+            editError.style.color = '#a90505';
             editError.innerHTML = data.error;
             return false;
         }else{
-            editError.style.color = 'black';
+            editError.style.color = '#010611';
             editError.innerHTML = data.msg;
         }
     }
@@ -341,32 +341,32 @@ function validateData(data){
     const checkInput = (school, faculty, level, inputData) =>{
         const namePattern = /^[^0-9]/;
         if(school.length === 0){
-            error.style.color='red';
+            error.style.color='#a90505';
             error.innerHTML = `School is required`;
             return false;
         }
         if(!school.match(namePattern)){
-            error.style.color = 'red';
+            error.style.color = '#a90505';
             error.innerHTML = 'School shoudn\'t be started with a number';
             return false;
         }
         if(faculty.length === 0){
-            error.style.color='red';
+            error.style.color='#a90505';
             error.innerHTML = `Faculty is required`;
             return false;
         }
         if(!faculty.match(namePattern)){
-            error.style.color = 'red';
+            error.style.color = '#a90505';
             error.innerHTML = 'Faculty shoudn\'t be started with a number';
             return false;
         }
         if(level.length === 0){
-            error.style.color='red';
+            error.style.color='#a90505';
             error.innerHTML = `Level is required`;
             return false;
         }
         if(!level.match(regPattern)){
-            error.style.color = 'red';
+            error.style.color = '#a90505';
             error.innerHTML = 'Level must be a number';
             return false;
         }else{

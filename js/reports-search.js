@@ -20,7 +20,7 @@ function displayReport(){
         .then(handleResponse)
         .then(handleData)
         .catch(error =>{
-            errorResult.style.color = 'red';
+            errorResult.style.color = '#a90505';
             errorResult.innerHTML = 'Something went wrong, try again!'
         });
 }  
@@ -41,12 +41,12 @@ function handleResponse(response){
 //function to check data validity
 function handleData(data){
         if(!adminToken){
-            errorResult.style.color = 'red';
+            errorResult.style.color = '#a90505';
             errorResult.innerHTML = 'Access Denied';
             return false;
         }
         if(data.error){
-            errorResult.style.color = 'red';
+            errorResult.style.color = '#a90505';
             errorResult.innerHTML = data.error;
             return false;
         }else{
@@ -97,19 +97,19 @@ function searchReport(){
     .then(handleResponse)
     .then(handleFoundData)
     .catch(error =>{
-        errorSearch.style.color ='red';
+        errorSearch.style.color ='#a90505';
         errorSearch.innerHTML = 'Something went wrong, try again!'
     })
 }
 
 function handleFoundData(result){
     if(!adminToken){
-        errorSearch.style.color = 'red';
+        errorSearch.style.color = '#a90505';
         errorSearch.innerHTML = 'Access Denied';
         return false;
     }
     if(result.error){
-        errorSearch.style.color = 'red';
+        errorSearch.style.color = '#a90505';
         errorSearch.innerHTML = result.error;
         return false;
     }else{

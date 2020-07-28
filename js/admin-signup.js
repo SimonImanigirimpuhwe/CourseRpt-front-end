@@ -18,7 +18,7 @@ const postData = (info) =>{
     .then(handleData)
     .catch(() =>{
         loadData.innerHTML ='';
-        errorResult.style.color = 'red';
+        errorResult.style.color = '#a90505';
         errorResult.innerHTML = 'Something went wrong, try again!'
     })
 }
@@ -37,12 +37,12 @@ function handleResponse(response){
 function handleData(result){
     if(result.error){
         loadData.innerHTML = '';
-        errorResult.style.color ='red';
+        errorResult.style.color ='#a90505';
         errorResult.innerHTML = `${result.error}`;
               
     }else{
         loadData.innerHTML ='';
-        errorResult.style.color ='black';
+        errorResult.style.color ='#010611';
         errorResult.innerHTML =`${result.msg}`;
         setTimeout(() =>{
             localStorage.setItem('adminToken', JSON.stringify(result.token));
@@ -57,57 +57,57 @@ const inputValidation = (firstname, lastname, username, email, password, options
     const namePattern = /^[^0-9]/;
    
     if(firstname.length === 0){
-        errorResult.style.color='red';
+        errorResult.style.color='#a90505';
         errorResult.innerHTML = 'Please Firstname is required';
         return false;
     }
     if(!firstname.match(namePattern)){
-        errorResult.style.color = 'red';
+        errorResult.style.color = '#a90505';
         errorResult.innerHTML = 'Firstname shouldn\'t be started with a number';
         return false;
     }
     if(lastname.length === 0){
-        errorResult.style.color='red';
+        errorResult.style.color='#a90505';
         errorResult.innerHTML = 'Please lastname is required';
         return false;
     }
     if(!lastname.match(namePattern)){
-        errorResult.style.color = 'red';
+        errorResult.style.color = '#a90505';
         errorResult.innerHTML = 'Lastname shouldn\'t be started with a number';
         return false;
     }
     if(username.length === 0){
-        errorResult.style.color='red';
+        errorResult.style.color='#a90505';
         errorResult.innerHTML = 'Please username is required';
         return false;
     }
     if(!username.match(namePattern)){
-        errorResult.style.color = 'red';
+        errorResult.style.color = '#a90505';
         errorResult.innerHTML = 'Username shouldn\'t be started with a number';
         return false;
     }
     if(username.length < 5){
-        errorResult.style.color = 'red';
+        errorResult.style.color = '#a90505';
         errorResult.innerHTML = 'Username must be at least 5 characters long';
         return false;
     }
     if(email.length === 0){
-        errorResult.style.color='red';
+        errorResult.style.color='#a90505';
         errorResult.innerHTML = 'Please Email must be valid';
         return false;
     }
     if(!email.match(emailPattern)){
-        errorResult.style.color = 'red';
+        errorResult.style.color = '#a90505';
         errorResult.innerHTML = 'Email shoudn\'t be started either with a number or capital letter';
         return false;
     }
     if(password.length === 0){
-        errorResult.style.color='red';
+        errorResult.style.color='#a90505';
         errorResult.innerHTML = 'Please Password is required';
         return false;
     }
     if(password.length < 8){
-        errorResult.style.color='red';
+        errorResult.style.color='#a90505';
         errorResult.innerHTML = 'Password must be 8 characters long';
         return false;
     }
