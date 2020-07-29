@@ -54,7 +54,7 @@ function handleData(result){
 
 
 const inputValidation = (reg, obj)=>{
-    const regPattern = /[^a-zA-Z]/;
+    const regPattern = /^([^a-zA-Z])+([0-9]{1,})+([0-9]{1,})$/;
     if(reg.length === 0){
         errorResult.style.color = '#a90505';
         errorResult.innerHTML = 'RegNumber is required';

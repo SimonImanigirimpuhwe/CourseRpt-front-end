@@ -60,6 +60,13 @@ img{
     width:100px;
     height:100px;
 }
+.homeIncon{    
+    float:right;
+    margin-right: 10px;
+}
+.menu{
+    display: inline-block;
+}
 .sticky{
     position: fixed;
     margin: 0;
@@ -119,4 +126,21 @@ span{
         width: 60px;
     }
    
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and(max-width: 768px){
+    nav li{
+        padding:0;
+        margin: .3rem;
+        display: flex;
+    }
+    .add, .logout, .view-report{
+        width:50px;
+        font-size: 10px;
+    }
+    input{
+        size: 60px;
+        margin-right: 0;
+        width: 60px;
+    }
 }

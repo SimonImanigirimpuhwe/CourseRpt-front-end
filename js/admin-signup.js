@@ -53,8 +53,9 @@ function handleData(result){
 
 
 const inputValidation = (firstname, lastname, username, email, password, options)=>{
-    const emailPattern = /^[^0-9A-Z]/;
-    const namePattern = /^[^0-9]/;
+    const emailPattern = /^[a-z]+([a-zA-Z0-9_\-\.]){1,}\@([a-z0-9_\-\.]){1,}\.([a-z]{2,4})$/;
+    const namePattern = /^([^0-9])+([a-zA-Z]{1,})$/;
+    const usernamePattern = /^[^0-9]/;
    
     if(firstname.length === 0){
         errorResult.style.color='#a90505';
@@ -63,7 +64,7 @@ const inputValidation = (firstname, lastname, username, email, password, options
     }
     if(!firstname.match(namePattern)){
         errorResult.style.color = '#a90505';
-        errorResult.innerHTML = 'Firstname shouldn\'t be started with a number';
+        errorResult.innerHTML = 'Firstname shouldn\'t include any number';
         return false;
     }
     if(lastname.length === 0){
@@ -73,7 +74,7 @@ const inputValidation = (firstname, lastname, username, email, password, options
     }
     if(!lastname.match(namePattern)){
         errorResult.style.color = '#a90505';
-        errorResult.innerHTML = 'Lastname shouldn\'t be started with a number';
+        errorResult.innerHTML = 'Lastname shouldn\'t include any number';
         return false;
     }
     if(username.length === 0){
@@ -81,7 +82,7 @@ const inputValidation = (firstname, lastname, username, email, password, options
         errorResult.innerHTML = 'Please username is required';
         return false;
     }
-    if(!username.match(namePattern)){
+    if(!username.match(usernamePattern)){
         errorResult.style.color = '#a90505';
         errorResult.innerHTML = 'Username shouldn\'t be started with a number';
         return false;
@@ -93,17 +94,17 @@ const inputValidation = (firstname, lastname, username, email, password, options
     }
     if(email.length === 0){
         errorResult.style.color='#a90505';
-        errorResult.innerHTML = 'Please Email must be valid';
+        errorResult.innerHTML = 'Please Email is required!';
         return false;
     }
     if(!email.match(emailPattern)){
         errorResult.style.color = '#a90505';
-        errorResult.innerHTML = 'Email shoudn\'t be started either with a number or capital letter';
+        errorResult.innerHTML = 'Email must be valid';
         return false;
     }
     if(password.length === 0){
         errorResult.style.color='#a90505';
-        errorResult.innerHTML = 'Please Password is required';
+        errorResult.innerHTML = 'Please Password is required!';
         return false;
     }
     if(password.length < 8){

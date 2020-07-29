@@ -311,4 +311,36 @@ small{
     .found-users{
         margin-left: 10%;
     }
+    .result{
+        margin-left: 120px;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and(max-width: 768px){
+    body{
+        grid-template-rows: 1fr;
+    }
+    form{
+        margin-left: -200px;
+    }
+    .top li{
+        padding:0;
+        margin: .3rem;
+        display: flex;
+    }
+    .add, .back, .view-cps{
+        width:50px;
+        font-size: 10px;
+    }
+    #search{
+        size: 60px;
+        margin-right: 0;
+        width: 60px;
+    }
+    .found-users{
+        margin-left: 10%;
+    }
+    .result{
+        margin-left: 120px;
+    }
 }

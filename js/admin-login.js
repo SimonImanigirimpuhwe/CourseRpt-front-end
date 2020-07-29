@@ -55,10 +55,15 @@ function handleData(result){
 
 
 const inputValidation = (username, password, inputOptions)=>{
+    const usernamePattern = /^[^0-9]/;
     if(username.length === 0){
         errorResult.style.color='#a90505';
         errorResult.innerHTML = `Please Username is required`;
         return false;
+    }
+    if(!username.match(usernamePattern)){
+        errorResult.style.color = '#a90505';
+        errorResult.innerHTML = 'Username shouldn\'t be started with a number'
     }
     if(password.length === 0){
         errorResult.style.color='#a90505';

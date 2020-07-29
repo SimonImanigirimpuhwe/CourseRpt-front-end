@@ -139,6 +139,20 @@ img{
         row-gap: 50px;
     }
     .btn{
-        font-size: 17px;
+        width: 40%;
     }
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and(max-width: 768px){
+    body{
+        overflow-x: hidden;
+    }
+    .guidline{
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+    .btn{
+        width: 40%;
+    }
+}
+

@@ -64,8 +64,8 @@ function handleData(result){
 
 
 const inputValidation = (firstname, lastname, regNumber, school,faculty, level, options)=>{
-    const namePattern = /^[^0-9]/;
-    const regPattern = /[^a-zA-Z]/;
+    const namePattern = /^([^0-9])+([a-zA-Z]{1,})$/;
+    const regPattern =  /^([^a-zA-Z])+([0-9]{1,})+([0-9]{1,})$/;
 
     if(firstname.length === 0){
         error.style.color='#a90505';
@@ -74,7 +74,7 @@ const inputValidation = (firstname, lastname, regNumber, school,faculty, level, 
     }
     if(!firstname.match(namePattern)){
         error.style.color = '#a90505';
-        error.innerHTML = 'Name shoudn\'t be started with a number';
+        error.innerHTML = 'Name shoudn\'t include any number';
         return false;
     }
     if(lastname.length === 0){
@@ -84,7 +84,7 @@ const inputValidation = (firstname, lastname, regNumber, school,faculty, level, 
     }
     if(!lastname.match(namePattern)){
         error.style.color = '#a90505';
-        error.innerHTML = 'Name shoudn\'t be started with a number';
+        error.innerHTML = 'Name shoudn\'t include any number';
         return false;
     }
     if(regNumber.length === 0){
@@ -109,7 +109,7 @@ const inputValidation = (firstname, lastname, regNumber, school,faculty, level, 
     }
     if(!school.match(namePattern)){
         error.style.color = '#a90505';
-        error.innerHTML = 'School shoudn\'t be started with a number';
+        error.innerHTML = 'School shoudn\'t include any number';
         return false;
     }
     if(faculty.length === 0){
@@ -119,7 +119,7 @@ const inputValidation = (firstname, lastname, regNumber, school,faculty, level, 
     }
     if(!faculty.match(namePattern)){
         error.style.color = '#a90505';
-        error.innerHTML = 'Faculty shoudn\'t be started with a number';
+        error.innerHTML = 'Faculty shoudn\'t include any number';
         return false;
     }
     if(level.length === 0){
