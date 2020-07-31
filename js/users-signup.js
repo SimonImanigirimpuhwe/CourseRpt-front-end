@@ -182,7 +182,7 @@ fetching all users
 */
 
 const errorResult = document.querySelector('.users-error');
-const searchInput = document.querySelector('.search');
+const searchInput = document.querySelector('#search');
 
 
 
@@ -395,3 +395,39 @@ function validateData(data){
         )
     })
  }
+
+ //Add functionalities to make Navigation Bar responsive
+const spanIncon = document.querySelector('.span');
+const hamberg = document.querySelector('.fa-bars');
+const menu = document.querySelector('.menu');
+const searchFa = document.querySelector('.fa-search');
+
+
+searchFa.addEventListener('click', () =>{
+    console.log('clicked')
+    searchInput.classList.toggle('visibleIncon');
+    console.log(searchInput.className)
+})
+
+//check window width on resize
+window.addEventListener('resize', checkWidth);
+function checkWidth() {
+    const widthValue = window.screen.width;
+    if (widthValue >= 671) {
+        menu.className = 'menu';
+    } else {
+        menu.className = 'dropdown'
+    }
+}
+spanIncon.addEventListener('click', (e) => {
+
+    if (e.target.classList.contains('fa-bars')) {
+        spanIncon.innerHTML = `<span class='fas span'><i class='fas fa-times'></i></span>`
+        menu.className = 'dropdown';
+    }
+    if (e.target.classList.contains('fa-times')) {
+        spanIncon.innerHTML = `<span class='fas span'><i class='fas fa-bars'></i></span>`;
+        menu.className = 'menu';
+
+    }
+})

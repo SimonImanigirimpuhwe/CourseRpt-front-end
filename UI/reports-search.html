@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ca61573632.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/reports-search.css">
     <title>View reports</title>
 </head>
@@ -14,20 +15,20 @@
         <nav class="menu">
             <ul>
                 <li>
-                    <input type="search" name="search" id="search" placeholder="Search report" value="">
-                    <label for="search">Search</label>
-                </li>
-                <li>
-                    <button class="view-report"><a href="#">reports</a></button>
+                    <button class="logout"><a href="./admin-login.html">logout</a></button>
                 </li>
                 <li>
                     <button class="add"><a href="./users-signup.html">Users</a></button>
                 </li>
                 <li>
-                    <button class="logout"><a href="./admin-login.html">logout</a></button>
+                    <button class="view-report"><a href="#">reports</a></button>
                 </li>
-            </ul>
+                <li>
+                    <input type="search" name="search" id="search" placeholder="Search report" value="">
+                    <span><i class="fas fa-search"></i></span>
+                </li>
         </nav>
+        <span class="fas span"><i class="fas fa-bars"></i></span>
     </div>
     <div class="result-container">
         <div class="result"></div>

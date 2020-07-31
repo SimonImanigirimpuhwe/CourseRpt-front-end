@@ -8,70 +8,76 @@ body{
     background-color: whitesmoke;
 }
 .top{
+    position:fixed;
+    height: 90px;
     background-color: #27dec0;
     border-bottom: 3px solid #3e5175;
     box-shadow: 5px 5px 10px #888888;
-}
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style:none;
-}
-nav li {
-    margin: 1em;
-    margin-top: 20px;
-    float:right;
-    font-weight: 900px;
-    font-size: .8rem;
-}
-nav ul input{
-    size:  100px;
-    height: 30px;
-    text-align: justify;
-    padding-left: 20px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 5px 4px 10px black;
-}
-a{
-    text-decoration: none;
-    text-transform: uppercase;
-    color: white;
-}
-.add,
-.logout,
-.view-report{
-    background-color: #141c2c;
-    border: none;
-    border-radius: 5px;
-    height: 30px;
-    width: 100px;
-}
-a:hover{
-    cursor: pointer;
-    color: darkcyan;
-}
-img{
-    margin-left: 10px;
-    margin-top: 10px;
-    font-size:20px;
-    float:left;
-    border-radius: 50%;
-    width:100px;
-    height:100px;
-}
-.homeIncon{    
-    float:right;
-    margin-right: 10px;
-}
-.menu{
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 20px;
 }
 .sticky{
     position: fixed;
     margin: 0;
     width: 100%;
 }
+
+
+/* Default display menu */
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+}
+.menu li{
+    margin: 1em;
+    float:right;
+    font-weight: 900px;
+    font-size: .8rem;
+}
+.menu ul input{
+    visibility: hidden;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+}
+.menu ul input.visibleIncon{
+    visibility: visible;
+}
+.fa-search{
+    width: 20px;
+    font-size: 18px;
+    position: relative;
+    color:black;
+    bottom: 7px;
+}
+.menu a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #00080e;
+}
+.menu button{
+    border: none;
+    background-color: #27dec0; 
+    text-transform: uppercase;
+}
+.menu a:hover{
+    color: #EEF2F5;
+}
+img{
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size:20px;
+    float:left;
+    border-radius: 50%;
+    width:80px;
+    height:80px;
+}
+
 .result-container{
     visibility: hidden;
     margin-top: 160px;
@@ -110,37 +116,74 @@ span{
     margin-top:20px;
     margin-left: 35%;
 }
-@media(max-width:768px){
-    nav li{
-        padding:0;
-        margin: .3rem;
-        display: flex;
+
+/*----------------------------------------
+-----contral navBar responsive -----------------
+*/
+
+@media(max-width: 670px){
+    .menu{
+        visibility: hidden;
     }
-    .add, .logout, .view-report{
-        width:50px;
-        font-size: 10px;
+    .span,
+    .fa-bars, 
+    .fas-times{
+        margin-bottom: 10px;
+        align-self: flex-end;
+        color: white;
     }
-    input{
-        size: 60px;
-        margin-right: 0;
-        width: 60px;
+    .dropdown .fa-search{
+        bottom: -6px;
     }
-   
+    .dropdown{
+        position: fixed;
+        top: 85px;
+        right: 0;
+        width: 150px;
+        flex-direction: column;
+        background-color: #27dec0;
+        border-bottom-left-radius: 20px;    
+        border-bottom-right-radius: 20px;    
+    }
+    .dropdown ul{
+        flex-flow: column;
+        align-self: flex-end;
+        list-style: none;
+        margin-left: 10px;
+        line-height: 30px;   
+    }
+    .dropdown input{
+        border: none;
+        width: 80%;
+        height: 30px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+    }
+    .dropdown a{
+        background-color:#27dec0 ;
+        text-decoration: none;
+        color: #00080e;
+    }
+    .dropdown a:hover{
+        color: #EEF2F5;
+    }
+    .dropdown button{
+        border: none;
+        background-color: #27dec0;
+        text-transform: uppercase 
+    }
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) and(max-width: 768px){
-    nav li{
-        padding:0;
-        margin: .3rem;
-        display: flex;
+@media(min-width: 671px){
+    nav{
+        display: inline-block;
     }
-    .add, .logout, .view-report{
-        width:50px;
-        font-size: 10px;
+    .span,
+    .fa-bars, 
+    .fas-times{
+        display: none;
     }
-    input{
-        size: 60px;
-        margin-right: 0;
-        width: 60px;
+    .dropdown{
+        display: none;
     }
-}
+} 

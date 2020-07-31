@@ -113,6 +113,7 @@ function handleFoundData(result){
         errorSearch.innerHTML = result.error;
         return false;
     }else{
+    
         const found = document.querySelector('.found-search-result');
         const foundData = result.map(element =>{
             return `
@@ -137,7 +138,7 @@ function handleFoundData(result){
     }
 }
 searchInput.addEventListener('change', searchReport)
-searchInput.addEventListener('keyup', searchReport)
+// searchInput.addEventListener('keyup', searchReport)
 
 
 //clear token when admin logged out
@@ -148,3 +149,38 @@ logoutBtn.addEventListener('click', (e) =>{
     localStorage.removeItem('loginToken');
     location.href ='./admin-login.html';
 });
+
+
+//Add functionalities to make Navigation Bar responsive
+const spanIncon = document.querySelector('.span');
+const hamberg = document.querySelector('.fa-bars');
+const menu = document.querySelector('.menu')
+const body = document.querySelector('body');
+const searchFa = document.querySelector('.fa-search');
+
+searchFa.addEventListener('click', () =>{
+    searchInput.classList.toggle('visibleIncon');
+})
+
+window.addEventListener('resize', checkWidth);
+function checkWidth() {
+    const widthValue = window.screen.width;
+    if (widthValue >= 671) {
+        menu.className = 'menu';
+    } else {
+        menu.className = 'dropdown'
+    }
+}
+spanIncon.addEventListener('click', (e) => {
+
+    if (e.target.classList.contains('fa-bars')) {
+        spanIncon.innerHTML = `<span class='fas span'><i class='fas fa-times'></i></span>`
+        menu.className = 'dropdown';
+        console.log('Small')
+    }
+    if (e.target.classList.contains('fa-times')) {
+        spanIncon.innerHTML = `<span class='fas span'><i class='fas fa-bars'></i></span>`;
+        menu.className = 'menu';
+
+    }
+})

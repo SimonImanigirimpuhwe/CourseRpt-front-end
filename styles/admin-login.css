@@ -128,13 +128,13 @@ button:hover{
     width: 50%;
     text-align: center;
 }
-@media(max-width:768px){
+@media(max-width:670px){
     body{
         grid-template-rows: 1fr;
         overflow-x: hidden;
     }
     form{
-        margin-left: -200px;
+        margin-left: -150px;
     }
     .top li{
         margin-right: 110px;
@@ -157,21 +157,5 @@ button:hover{
     }
     100%{
         transform: rotate(360deg);
-    }
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) and(max-width: 768px){
-    body{
-        grid-template-rows: 1fr;
-        overflow-x: hidden;
-    }
-    form{
-        margin-left: -200px;
-    }
-    .top li{
-        margin-right: 110px;
-    }
-    .result{
-        margin-left: 120px;
     }
 }

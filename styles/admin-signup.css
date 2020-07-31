@@ -100,8 +100,8 @@ input{
  border: none;
  background-color: #141c2c;
  color: #fff;
- width: 25%;
- height: 300px;
+ width: 100px;
+ height: 50px;
  border-radius: 5px;
 }
 .register:hover{
@@ -166,13 +166,14 @@ small a:hover{
         transform: rotate(360deg);
     } 
 }
-@media(max-width:768px){
+@media(max-width:670px){
     body{
         grid-template-rows: 1fr;
         overflow-x: hidden;
     }
     form{
         margin-left: -130px;
+        margin-right: 20px;
     }
     .top li{
         margin-right: 110px;
@@ -181,26 +182,7 @@ small a:hover{
         margin-left: 120px;
     }
     .register{
-        height: 300px;
-        padding: 15px;
+        height: 90px;
+        padding-bottom: 5px;
     }
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) and(max-width: 768px){
-        body{
-            grid-template-rows: 1fr;
-            overflow-x: hidden;
-        }
-        form{
-            margin-left: -130px;
-        }
-        .top li{
-            margin-right: 110px;
-        }
-        .result{
-            margin-left: 120px;
-        }
-        .register{
-            padding: 15px;
-            height: 250px;
-        }
 }

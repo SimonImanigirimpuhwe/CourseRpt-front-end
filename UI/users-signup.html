@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ca61573632.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/users-signup.css">
     <title>Signup form</title>
 </head>
@@ -11,21 +12,24 @@
 <body>
     <div class="top sticky">
         <img src="../img/ur-logo.png" alt="logo" class="logo">
-        <nav>
+        <nav class="menu">
             <ul>
-                <li class="search">
-                    <input type="search" name="search" id="search" placeholder="search users">
+                <li>
+                    <button class="back">Back</button>
+                </li>
+                <li>
+                    <button class="add">Add cps</button>
                 </li>
                 <li>
                     <button class="view-cps" onclick="displayReport()">All cps</button></li>
                 <li>
-                <li>
-                    <button class="add">Add cps</button></li>
-                <li>
-                    <button class="back">Back</button>
+                <li class="search">
+                    <input type="search" name="search" id="search" placeholder="search users">
+                    <span><i class="fas fa-search"></i></span>
                 </li>
             </ul>
         </nav>
+        <span class="fas span"><i class="fas fa-bars"></i></span>
     </div>
     <h3 id="title">Class Representative Signup form</h3>
     <div class="container">
