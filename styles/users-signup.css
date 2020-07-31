@@ -162,7 +162,6 @@ form input{
     line-height: 20px;
     width: 50%;
     text-align: center;
-    /* background-color: red; */
 }
 #edit-error{
     height: 40px;
@@ -227,6 +226,7 @@ span{
     height: 30px;
     border-radius: 5px;
     margin-top: 50px;
+    color: white;
 }
 #edit:hover, #delete:hover{
     background-color: #26CC7C;
@@ -277,6 +277,7 @@ small{
     border-radius: 5px;
     margin-top: 30px;
     margin-left: 45%;
+    color: white;
 }
 .submit:hover,
 .submit:focus{

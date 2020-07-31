@@ -87,7 +87,7 @@ img{
     visibility: hidden;
 }
 .search-result, 
-.found-result-{
+.found-result{
     visibility: visible;
     background-color: darkgray;
     color: black;
@@ -172,6 +172,10 @@ span{
         background-color: #27dec0;
         text-transform: uppercase 
     }
+    .search-result, 
+    .found-result{
+        margin-left: 0;
+}
 }
 
 @media(min-width: 671px){

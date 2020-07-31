@@ -172,11 +172,10 @@ function checkWidth() {
     }
 }
 spanIncon.addEventListener('click', (e) => {
-
+    e.preventDefault();
     if (e.target.classList.contains('fa-bars')) {
         spanIncon.innerHTML = `<span class='fas span'><i class='fas fa-times'></i></span>`
         menu.className = 'dropdown';
-        console.log('Small')
     }
     if (e.target.classList.contains('fa-times')) {
         spanIncon.innerHTML = `<span class='fas span'><i class='fas fa-bars'></i></span>`;

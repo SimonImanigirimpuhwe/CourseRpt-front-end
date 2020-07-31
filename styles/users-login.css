@@ -38,15 +38,16 @@ nav li:focus {
 }
 img{
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
     font-size:20px;
     float:left;
     border-radius: 50%;
-    width:100px;
-    height:100px;
+    width:80px;
+    height:80px;
 }
 .sticky{
     position: fixed;
+    height: 90px;
     margin: 0;
     width: 100%;
 }
@@ -152,7 +153,8 @@ button:hover{
         overflow-x: hidden;
     }
     form{
-        margin-left: -200px;
+        margin-left: -150px;
+        margin-right: -45px;
     }
     .top li{
         margin-right: 110px;
