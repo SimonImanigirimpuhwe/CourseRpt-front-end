@@ -66,6 +66,7 @@ function handleData(result){
 const inputValidation = (firstname, lastname, regNumber, school,faculty, level, options)=>{
     const namePattern = /^([^0-9])+([a-zA-Z]{1,})$/;
     const regPattern =  /^([^a-zA-Z])+([0-9]{1,})+([0-9]{1,})$/;
+    const levelPattern = /^([^a-zA-Z])$/;
 
     if(firstname.length === 0){
         error.style.color='#a90505';
@@ -127,7 +128,7 @@ const inputValidation = (firstname, lastname, regNumber, school,faculty, level, 
         error.innerHTML = `Level is required`;
         return false;
     }
-    if(!level.match(regPattern)){
+    if(!level.match(levelPattern)){
         error.style.color = '#a90505';
         error.innerHTML = 'Level must be a number';
         return false;
