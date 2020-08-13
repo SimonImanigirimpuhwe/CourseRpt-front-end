@@ -130,7 +130,7 @@ const inputValidation = (firstname, lastname, regNumber, school,faculty, level, 
     }
     if(!level.match(levelPattern)){
         error.style.color = '#a90505';
-        error.innerHTML = 'Level must be a number';
+        error.innerHTML = 'Level must be a single number';
         return false;
     }
     else{
