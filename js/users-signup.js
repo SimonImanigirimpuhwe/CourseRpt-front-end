@@ -272,17 +272,18 @@ function validateData(data){
         element.addEventListener('click', (e) =>{
             const inputEdit = document.querySelector('small');
             const inputValues = document.createElement('div');
-            inputValues.innerHTML = `<div id="input-edit">
-            <label for="school">School</label>
-            <input type="text" name="school" id="school" placeholder="Enter Your School" value="">
-            <label for="faculty">Faculty</label>
-            <input type="text" name="faculty" id="faculty" placeholder="Enter Your Faculty" value="">
-            <label for="level">Level</label>
-            <input type="text" name="level" id="level" placeholder="Enter Your Level" value="">
-        </div>
-        <button type="submit" class="submit" onclick='modifyUser()'>Submit</button>
-        <div id="edit-error"></div>`;
-        inputEdit.append(inputValues);
+            location.href = './edit.html'
+        //     inputValues.innerHTML = `<div id="input-edit">
+        //     <label for="school">School</label>
+        //     <input type="text" name="school" id="school" placeholder="Enter Your School" value="">
+        //     <label for="faculty">Faculty</label>
+        //     <input type="text" name="faculty" id="faculty" placeholder="Enter Your Faculty" value="">
+        //     <label for="level">Level</label>
+        //     <input type="text" name="level" id="level" placeholder="Enter Your Level" value="">
+        // </div>
+        // <button type="submit" class="submit" onclick='modifyUser()'>Submit</button>
+        // <div id="edit-error"></div>`;
+        // inputEdit.append(inputValues);
         })
     })
  }

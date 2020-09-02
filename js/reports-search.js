@@ -2,6 +2,7 @@ const errorResult = document.querySelector('.error');
 const errorSearch = document.querySelector('.search-error');
 const searchInput = document.querySelector('#search');
 const viewReport = document.querySelector('.view-report');
+const result = document.querySelector('.result')
 
 const adminToken = JSON.parse(localStorage.getItem('loginToken'));
 
@@ -50,7 +51,6 @@ function handleData(data){
             errorResult.innerHTML = data.error;
             return false;
         }else{
-            const result = document.querySelector('.result')
             const mapped = data.map(element => {
                 return `
                 <div class='search-result'>
@@ -114,7 +114,7 @@ function handleFoundData(result){
         return false;
     }else{
     
-        const found = document.querySelector('.found-search-result');
+        const found = document.querySelector('.found');
         const foundData = result.map(element =>{
             return `
             <div class='found-result'>
@@ -160,6 +160,14 @@ const searchFa = document.querySelector('.fa-search');
 
 searchFa.addEventListener('click', () =>{
     searchInput.classList.toggle('visibleIncon');
+    const resultContainer = document.querySelector('.result-container')
+    const removeResultClass = document.querySelector('.search-result')
+   if (result.childNodes.className = 'search-result' && searchInput.className == 'visibleIncon'){
+       removeResultClass.style.visibility = 'hidden';
+       body.style.overflowY = 'hidden';
+   }else{
+       body.style.overflowY = 'visible'
+   }
 })
 
 window.addEventListener('resize', checkWidth);
